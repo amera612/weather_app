@@ -10,7 +10,7 @@ class SearchPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 44, 110, 224),
+          // backgroundColor: const Color.fromARGB(255, 44, 110, 224),
           title: const Text('Search a city'),
         ),
         body: Center(
