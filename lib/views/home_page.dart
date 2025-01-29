@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
               icon: const Icon(Icons.search_rounded),
             ),
           ],
-          backgroundColor: const Color.fromARGB(255, 44, 110, 224),
+          // backgroundColor: const Color.fromARGB(255, 44, 110, 224),
         ),
 
         // integrate && lisent to cubit🫵🏻🫵🏻🫵🏻
@@ -41,9 +41,25 @@ class _HomePageState extends State<HomePage> {
             if (state is NoWeatherState) {
               return const NoWeather();
             } else if (state is LoadedWeatherState) {
-              return const WeatherInfo();
+              // ignore: prefer_const_constructors to rebuild in anather search
+              return WeatherInfo(
+                weather: state.weatherModel,
+              );
             } else {
-              return const Text('sorry! there is an error try again');
+              return const Padding(
+                padding: EdgeInsets.all(19.0),
+                child: Center(
+                  child: Text(
+                    '🤦🏻‍♀️🤦🏻‍♀️sorry! there is an error try again',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 30,
+                      //fontWeight: FontWeight.bold,
+                      fontStyle: FontStyle.italic,
+                    ),
+                  ),
+                ),
+              );
             }
           },
         ),
